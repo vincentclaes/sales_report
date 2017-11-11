@@ -1,0 +1,130 @@
+h1 { color: white; font-family: 'Raleway',sans-serif; font-size: 22px; font-weight: 800; 
+      line-height: 72px; margin: 0 0 24px; text-align: center; 
+      text-transform: uppercase; margin: 0;
+          border-bottom: 2px solid #FF1A1E; background-color: #000090;}
+
+h3 { color: #11568b; font-family: 'Raleway',sans-serif; font-size: 20px; font-weight: 800; line-height: 36px; 
+      margin: 0 0 24px; text-align: left; padding-top: 5px; text-indent: 15px; }
+
+p { color: #677277; font-family: 'Raleway',sans-serif; font-size: 12px; font-weight: 400; 
+    line-height: 20px; margin: 24 24 24px; text-indent: 36px  }
+
+a { color: #c8c8c8; text-decoration: underline; }
+
+html, body {
+  margin: 0;
+  background-color: #e7ebed;
+}
+
+
+
+table tr td:first-of-type {
+    font-weight: bold;
+    font-size: 2em;
+    color: black;
+    text-align: left;
+}
+
+
+.header {
+    margin-bottom: 25px;
+    width: 90%;
+    margin-left: 25px;
+}
+
+.last {
+    margin-bottom: 25px;
+}
+
+.phy_body { margin: 0 }
+
+div.non_tabular {
+    display: table;
+    width: 90%;
+    table-layout: fixed;    /* For cells of equal size */
+    margin-left: 25px;
+    margin-right: 25px;
+    text-align: left;
+    color: #677277; font-family: 'Raleway',sans-serif; font-size: 12px; font-weight: 400; 
+    line-height: 20px; margin: 24 24 24px; text-indent: 36px
+
+}
+div.non_tabular span {
+    display: table-cell;
+}
+
+
+#phy_table {
+    font-family: "Raleway", sans-serif;
+    border-collapse: collapse;
+    width: 90%;
+    color: #000000;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+
+
+#phy_table td {
+    border: 1px solid #ddd;
+    padding: 3px;
+    font-size: 12px;
+    color: #677277; font-family: 'Raleway',sans-serif; 
+    /*font-weight: 500;*/
+}
+
+#phy_table tr:nth-child(even){background-color: #f2f2f2; }
+
+#phy_table th {
+    border: 2px solid #ddd;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    background-color: #a8bac3;
+    color: white;
+    font-size: 14px
+}
+
+#phy_table_depleted {
+    font-family: "Raleway", sans-serif;
+    border-collapse: collapse;
+    width: 90%;
+    color: #000000;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+#phy_table_depleted td {
+    border: 1px solid #ddd;
+    padding: 3px;
+    font-size: 12px;
+    color: #677277; 
+    font-family: 'Raleway',sans-serif; 
+    /*font-weight: 500;*/
+
+}
+
+#phy_table tr:nth-child(even){background-color: #f2f2f2; }
+
+#phy_table_depleted th {
+    border: 2px solid #ddd;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    background-color: #a8bac3;
+    color: white;
+    font-size: 12px
+
+}
+
+
+.mortality-right {
+    text-align: center;
+}
+
+
+
+
+

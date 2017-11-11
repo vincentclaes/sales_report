@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head lang='en'>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        
+        <title></title>
+    </head>
+    <body class='phy_body '>
+        
+        <div class="header center-contents">
+            <h1>AXA SALES REPORT <br></h1>
+        </div>
+
+        <div id="tables" class="center-contents">
+
+
+            <table id="phy_table">
+                <tr>
+                    <th colspan='10'><h2>Figures {{selected_month}}</h2></th>
+                </tr>
+                <tr>
+                {% for name, path in images.iteritems() %}
+                    <th>{{name}}</th>
+                {% endfor %}
+                </tr> 
+                <tr>
+                {% for name, path in images.iteritems() %}
+                    <td><img src={{ path }} alt="sales view"></td>
+                {% endfor %}
+                </tr>
+
+            </table>
+         </div>
+
+        <div id="tables" class="center-contents">
+
+
+            <table id="phy_table">
+                <tr>
+                    <th colspan='10'><h2>Tables {{selected_month}}</h2></th>
+                </tr>
+                {% for name, table in tables.iteritems() %}
+                    <th colspan="2" >{{name}}</th>
+                    {% for index, row in table.iteritems() %}
+                        <tr>
+                            <td>{{ index[1] }}</td>
+                            <td>{{ row }}</td>
+                        </tr>
+                    {% endfor %}
+                {% endfor %}
+            </table>
+         </div>
+     
+    </body>
+</html>
