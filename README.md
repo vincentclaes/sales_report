@@ -20,11 +20,12 @@ this is tested on ubuntu. installation of matplotlib might cause issues on windo
 ### monthly report
 
 execute the following command:
-   `report monthly`
+
+`report monthly`
 
 the default month is the last month. If you want to select the report for 2 months ago, execute
 
-    `report monthly --month 2`
+`report monthly --month 2`
 
 
 ## Tests

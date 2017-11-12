@@ -16,6 +16,8 @@ setup(
     install_requires=[
         'pandas==0.20.0',
         'matplotlib==2.1.0',
-        'jinja2'
+        'jinja2==2.10',
+        'jupyter==1.0.0',
+        'xlrd'
     ],
 )
