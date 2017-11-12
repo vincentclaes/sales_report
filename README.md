@@ -15,14 +15,18 @@ this is tested on ubuntu. installation of matplotlib might cause issues on windo
 
  `pip install -r requirements.txt`
 
-## CLI
+## USAGE
 
 ### monthly report
 
-the default month is the last month.
-`report monthly`
+execute the following command:
+   `report monthly`
+
+the default month is the last month. If you want to select the report for 2 months ago, execute
+
+    `report monthly --month 2`
 
 
 ## Tests
 
-run `python setup.py test`
+no tests are written.
