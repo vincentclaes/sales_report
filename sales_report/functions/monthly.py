@@ -16,12 +16,12 @@ class MonthlyReport(object):
     DEPENDENT_VARIABLES = ['OrderTurnOver', 'OrderProfit']
     INDEPENDENT_VARIABLE = 'Sales_Person'
 
-    def __init__(self, dataset, month, path):
-        if month == 0:
+    def __init__(self, dataset, months_ago, path):
+        if months_ago == 0:
             raise MonthlyReportException('you cannot use 0 when selecting months.')
-        elif not isinstance(month, int):
+        elif not isinstance(months_ago, int):
             raise MonthlyReportException('we need an integer as type for a month')
-        self.month = month if month < 0 else month * -1
+        self.month = months_ago if months_ago < 0 else months_ago * -1
         self.dataset = dataset
         self.path = path
         self.selected_month = None

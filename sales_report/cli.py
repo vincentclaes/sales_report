@@ -1,9 +1,9 @@
 import argparse
-import os
 import logging
+import os
 
 from sales_report import ROOT
-from sales_report.monthly import MonthlyReport
+from sales_report.functions.monthly import MonthlyReport
 from view import generator
 
 default_dataset = os.path.join(ROOT, 'data', 'Exercice_SalesData.xlsx')
@@ -17,7 +17,7 @@ def monthly(args):
     :param args: cli arguments
     :return: None
     """
-    d = MonthlyReport(args.dataset, args.month, args.path)
+    d = MonthlyReport(args.dataset, args.months_ago, args.path)
     template_vars = d.describe_past_month()
     generator.create_html_report(template_vars, args.template, args.path)
 
@@ -33,7 +33,7 @@ def get_parser():
 
     ht = "create a report"
     parser_monthly = subparsers.add_parser('monthly', help=ht)
-    parser_monthly.add_argument('--month', type=int, default=-1,
+    parser_monthly.add_argument('--months_ago', type=int, default=-1,
                                 help="define how many months ago you want to check")
     parser_monthly.add_argument('--dataset', type=str, default=default_dataset,
                                 help="the path to the dataset")
