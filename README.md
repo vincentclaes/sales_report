@@ -11,11 +11,16 @@ this is tested on ubuntu. installation of matplotlib might cause issues on windo
 
  `sudo apt-get install libfreetype6-dev`
 
+ to install this python module execute the following command
+
  `pip install -r requirements.txt`
 
 ## CLI
 
-### run
+### monthly report
+
+the default month is the last month.
+`report monthly`
 
 
 ## Tests

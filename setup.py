@@ -1,34 +1,21 @@
 #!/usr/bin/env python
 
 from setuptools import setup, find_packages
-test_deps = [
-    'nose'
-]
-extras = {
-    'test': test_deps,
-}
 
 setup(
-    name='regi_reporter',
+    name='sales_report',
     version='0.0.1',
-    description='reporting module that takes data/results from different units and combines these.',
-    long_description='we can create standard technical day/week/financial reports but we can also join, concatenate '
-                     'and summarize data from various flocks. Besides this there is an api endpoint available to make '
-                     'requests to generate these reports.',
+    description='report from dataset using pandas and jinja2.',
     author='Vincent Claes',
-    author_email="vincent.claes@porphyrio.com",
-    license='',
-    url='https://bitbucket.org/porphyrio/regi_reporter',
-    scripts=['regi_reporter/bin/app', 'regi_reporter/bin/report', 'regi_reporter/bin/report.bat'],
+    author_email="vclaes1986@gmail.com",
+    scripts=['sales_report/report', 'sales_report/report.bat'],
     packages=find_packages(),
     package_data={
-        '': ['*.json', '*.csv']
+        '': ['*.xlsx', '*.pickle']
     },
     install_requires=[
-        'pandas == 0.20.0',
-        'matplotlib'
+        'pandas==0.20.0',
+        'matplotlib==2.1.0',
+        'jinja2'
     ],
-    tests_require=test_deps,
-    extras_require=extras,
-    zip_safe=False
 )

@@ -1,33 +1,39 @@
 import argparse
 import os
-from tempfile import mkdtemp
 
 from sales_report import ROOT
-from sales_report.description import Description
+from sales_report.monthly import MonthlyReport
 from view import generator
 
 default_dataset = os.path.join(ROOT, 'data', 'Exercice_SalesData.xlsx')
-temp_dir = mkdtemp(prefix='axa_test_')
+default_template = os.path.join(ROOT, 'view', 'sales_report.html')
+default_output = os.path.join(ROOT, 'view', 'output')
 
 
-def description(args):
-    d = Description(args.dataset, args.month, args.path)
+def monthly(args):
+    """
+    create monthly sales report
+    :param args: cli arguments
+    :return: None
+    """
+    d = MonthlyReport(args.dataset, args.month, args.path)
     template_vars = d.describe_past_month()
-    generator.render_template_from_string(template_vars,
-                                          r'/home/vagrant/Desktop/axa_test/axa_test/view/sales_report.html')
+    generator.create_html_report(template_vars, args.template, args.path)
 
 
 def get_parser():
     parser = argparse.ArgumentParser()
     subparsers = parser.add_subparsers(help='sub-command help')
     ht = "create a report"
-    parser_description = subparsers.add_parser('description', help=ht)
+    parser_description = subparsers.add_parser('monthly', help=ht)
     parser_description.add_argument('--month', type=int, default=-1,
                                     help="define how many months ago you want to check")
     parser_description.add_argument('--dataset', type=str, default=default_dataset,
-                                    help="define how many months ago you want to check")
-    parser_description.add_argument('--path', type=str, default=temp_dir,
-                                    help="define how many months ago you want to check")
-    parser_description.set_defaults(func=description)
+                                    help="the path to the dataset")
+    parser_description.add_argument('--path', type=str, default=default_output,
+                                    help="the output path of the report.")
+    parser_description.add_argument('--template', type=str, default=default_template,
+                                    help="the path of the template")
+    parser_description.set_defaults(func=monthly)
 
     return parser
