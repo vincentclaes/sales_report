@@ -5,9 +5,9 @@ and tables using python, pandas and jinja2.
 
 ## Install
 
-this is tested on ubuntu. installation of matplotlib might cause issues on windows
+this is tested on ubuntu. the generation of images with matplotlib might cause issues on windows
 
- prerequisites for installing matplotlib
+ prerequisites for installing matplotlib on ubuntu:
 
  `sudo apt-get install libfreetype6-dev`
 
