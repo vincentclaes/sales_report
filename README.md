@@ -25,7 +25,7 @@ execute the following command:
 
 the default month is the last month. If you want to select the report for 2 months ago, execute
 
-`report monthly --month 2`
+`report monthly --months_ago 2`
 
 
 ## Tests
