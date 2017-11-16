@@ -3,7 +3,7 @@ import logging
 import os
 
 from sales_report import ROOT
-from sales_report.functions.monthly import MonthlyReport
+from sales_report.report_functions.monthly import MonthlyReport
 from view import generator
 
 default_dataset = os.path.join(ROOT, 'data', 'Exercice_SalesData.xlsx')
@@ -18,7 +18,7 @@ def monthly(args):
     :return: None
     """
     d = MonthlyReport(args.dataset, args.months_ago, args.path)
-    template_vars = d.describe_past_month()
+    template_vars = d.get_report_data()
     generator.create_html_report(template_vars, args.template, args.path)
 
 

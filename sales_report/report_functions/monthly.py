@@ -4,14 +4,15 @@ import os
 import matplotlib.pyplot as plt
 import pandas as pd
 
+from base_function import BaseFunction
 
 class MonthlyReportException(Exception):
     pass
 
 
-class MonthlyReport(object):
+class MonthlyReport(BaseFunction):
     """
-
+    get necessary data to create Monthly Reports.
     """
     DEPENDENT_VARIABLES = ['OrderTurnOver', 'OrderProfit']
     INDEPENDENT_VARIABLE = 'Sales_Person'
@@ -28,7 +29,7 @@ class MonthlyReport(object):
         self.images = {}
         self.tables = {}
 
-    def describe_past_month(self):
+    def get_report_data(self):
         """
         calculate necessary metrics for a specific month to get insight.
         build visuals based on the metrics
